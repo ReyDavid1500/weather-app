@@ -9,9 +9,11 @@ export const SearchInput = ({ value, onChange }: SearchInputProps) => {
   return (
     <>
       <input
+        id="search-input"
+        name="search-input"
         type="text"
         placeholder="Search city"
-        className="p-2 rounded-lg bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-300 w-[180px] md:w-[300px] lg:w-[400px]"
+        className="p-2 rounded-lg bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-300 w-[300px] lg:w-[400px]"
         value={value}
         onChange={onChange}
       />
