@@ -30775,7 +30775,7 @@ const cities = [
     city_name: "Beijing",
     state_code: "22",
     country_code: "CN",
-    country_full: "Paracel Islands",
+    country_full: "China",
     lat: 39.9075,
     lon: 116.39723,
   },

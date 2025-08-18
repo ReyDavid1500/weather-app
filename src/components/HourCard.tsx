@@ -4,9 +4,26 @@ type HourCardProps = {
   icon: string;
   alt: string;
   unixDate: number;
+  timezone: number; // Timezone offset in seconds
 };
 
-export const HourCard = ({ temp, pop, icon, alt, unixDate }: HourCardProps) => {
+export const HourCard = ({
+  temp,
+  pop,
+  icon,
+  alt,
+  unixDate,
+  timezone,
+}: HourCardProps) => {
+  const localTime = new Date((unixDate + timezone) * 1000);
+
+  const formattedTime = new Intl.DateTimeFormat("en-US", {
+    hour: "numeric",
+    minute: "2-digit",
+    hour12: true,
+    timeZone: "UTC",
+  }).format(localTime);
+
   return (
     <div className="flex flex-col items-center justify-between w-[120px] px-4 text-[14px]">
       <div>
@@ -21,12 +38,7 @@ export const HourCard = ({ temp, pop, icon, alt, unixDate }: HourCardProps) => {
             className="max-w-[40px] max-h-[40px]"
           />
         </div>
-        <p className="text-gray-700">
-          {new Date(unixDate * 1000).toLocaleTimeString([], {
-            hour: "2-digit",
-            minute: "2-digit",
-          })}
-        </p>
+        <p className="text-gray-700">{formattedTime}</p>
       </div>
     </div>
   );

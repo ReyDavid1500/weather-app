@@ -36,10 +36,9 @@ export const DayCard = ({
           {description.charAt(0).toUpperCase() + description.slice(1)}
         </p>
       </div>
-      <div>
-        <p>
-          <span>{min_temp}°</span> → <span>{max_temp}°</span>
-        </p>
+      <div className="flex items-end gap-2">
+        <p className="text-xl font-medium">{max_temp}°</p>{" "}
+        <p className="text-gray-600 font-medium">{min_temp}°</p>
       </div>
     </div>
   );

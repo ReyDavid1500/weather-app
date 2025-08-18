@@ -1,4 +1,15 @@
+export type CityTabData = {
+  id: string;
+  name: string;
+  countryName: string;
+};
+
 export type TApiResponse = {
+  list: TApiHourlyData[];
+  city: TApiCityData;
+};
+
+export type TApiHourlyData = {
   dt: number;
   main: {
     temp: number;
@@ -34,6 +45,20 @@ export type TApiResponse = {
     pod: string;
   };
   dt_txt: string;
+};
+
+export type TApiCityData = {
+  id: number;
+  name: string;
+  coord: {
+    lat: number;
+    lon: number;
+  };
+  country: string;
+  population: number;
+  timezone: number;
+  sunrise: number;
+  sunset: number;
 };
 
 export type TCity = {
