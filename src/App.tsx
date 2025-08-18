@@ -105,7 +105,7 @@ function App() {
             </div>
           </ContainerWrapper>
           <ContainerWrapper
-            title="Next 6 days"
+            title={`Next ${fiveDayForecast?.length} days`}
             className="min-h-[535px] max-w-[400px] h-auto lg:max-w-[500px] mx-auto lg:w-[40%] xl:w-[30%]"
           >
             <div className="px-4">

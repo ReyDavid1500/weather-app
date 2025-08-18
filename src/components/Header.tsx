@@ -47,7 +47,7 @@ export const Header = ({
                 <RefreshIcon
                   width={20}
                   height={20}
-                  className={`transition-transform duration-300 ${
+                  className={`transition-transform duration-300 cursor-pointer ${
                     isFetching ? "animate-spin" : ""
                   }`}
                 />
