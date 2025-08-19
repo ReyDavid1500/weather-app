@@ -1,15 +1,19 @@
-import { Loader } from "./components/Loader";
-import { ContainerWrapper } from "./components/ContainerWrapper.tsx";
-import { HourCard } from "./components/HourCard.tsx";
-import { DayCard } from "./components/DayCard.tsx";
-import { ErrorMessage } from "./components/ErrorMessage.tsx";
-import { Header } from "./components/Header.tsx";
-import { useOnClickOutside } from "./hooks/useOnClickOutside.ts";
-import { Footer } from "./components/Footer.tsx";
-import { CityTabs } from "./components/CityTabs.tsx";
-import { useWeatherData } from "./hooks/useWeatherData.ts";
-import { useCitySearch } from "./hooks/useCitySearch.ts";
-import { useCityTabs } from "./hooks/useCityTabs.ts";
+import {
+  useCitySearch,
+  useCityTabs,
+  useOnClickOutside,
+  useWeatherData,
+} from "./hooks";
+import {
+  ErrorMessage,
+  CityTabs,
+  ContainerWrapper,
+  DayCard,
+  Footer,
+  Header,
+  HourCard,
+  Loader,
+} from "./components";
 
 const initialTabs = [
   { id: "3451190", name: "Rio de Janeiro", countryName: "Brazil" },
@@ -84,7 +88,9 @@ function App() {
           handleSelectedCityTab={handleSelectedCityTab}
           handleRemoveCity={removeCity}
         />
-        <div className="bg-[url(https://pub-873e7884cc3b416fa7c9d881d5d16822.r2.dev/noaa-99F4mC79j1I-unsplash.jpg)] py-5 px-5 lg:flex lg:flex-1 lg:items-center relative">
+        <div
+          className={`bg-[url(https://pub-873e7884cc3b416fa7c9d881d5d16822.r2.dev/noaa-99F4mC79j1I-unsplash.jpg)] py-5 px-5 lg:flex lg:flex-1 lg:items-center relative`}
+        >
           {(isLoading || isFetching) && <Loader />}
           <ContainerWrapper
             title="Next hours"
@@ -99,17 +105,17 @@ function App() {
                   icon={hour.weather[0].icon}
                   alt={hour.weather[0].description}
                   unixDate={hour.dt}
-                  timezone={timeZoneOffset || 0}
+                  timezone={timeZoneOffset}
                 />
               ))}
             </div>
           </ContainerWrapper>
           <ContainerWrapper
-            title={`Next ${fiveDayForecast?.length} days`}
+            title={`Next ${fiveDayForecast.length} days`}
             className="min-h-[535px] max-w-[400px] h-auto lg:max-w-[500px] mx-auto lg:w-[40%] xl:w-[30%]"
           >
             <div className="px-4">
-              {fiveDayForecast?.map((day, index) => (
+              {fiveDayForecast.map((day, index) => (
                 <DayCard
                   key={index}
                   icon={day.icon}

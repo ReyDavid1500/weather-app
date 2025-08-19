@@ -1,11 +1,11 @@
 import React from "react";
-import type { CityTabData } from "../types";
+import type { TCityTabData } from "../types";
 import { Tooltip } from "./Tooltip";
 import { DeleteIcon } from "./Icons/DeleteIcon";
 
 type CityTabsProps = {
-  tabsOptions: CityTabData[];
-  selectedTab: CityTabData;
+  tabsOptions: TCityTabData[];
+  selectedTab: TCityTabData;
   handleSelectedCityTab: (e: React.MouseEvent<HTMLButtonElement>) => void;
   handleRemoveCity: (cityId: string) => void;
 };

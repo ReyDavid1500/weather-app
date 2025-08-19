@@ -1,8 +1,8 @@
 import { useState } from "react";
-import type { CityTabData, TCity } from "../types";
+import type { TCityTabData, TCity } from "../types";
 import cities from "../mockData/cities";
 
-export const useCityTabs = (initialTabs: CityTabData[]) => {
+export const useCityTabs = (initialTabs: TCityTabData[]) => {
   const [tabsOptions, setTabsOptions] = useState(initialTabs);
   const [selectedTab, setSelectedTab] = useState(initialTabs[0]);
   const [selectedCity, setSelectedCity] = useState<TCity>(
@@ -20,7 +20,7 @@ export const useCityTabs = (initialTabs: CityTabData[]) => {
     }
   };
 
-  const addCity = (newCity: CityTabData) => {
+  const addCity = (newCity: TCityTabData) => {
     setTabsOptions((prev) => {
       if (prev.some((city) => city.id === newCity.id)) {
         return prev;

@@ -21,7 +21,11 @@ export const useWeatherData = (selectedCity: TCity) => {
   );
 
   const {
-    data: { hourlyData, fiveDayForecast, timeZoneOffset } = {},
+    data: { hourlyData, fiveDayForecast, timeZoneOffset } = {
+      hourlyData: [],
+      fiveDayForecast: [],
+      timeZoneOffset: 0,
+    },
     isLoading,
     isFetching,
     error,

@@ -7,7 +7,6 @@ export const useCitySearch = () => {
   const [resultSearch, setResultSearch] = useState<TCity[]>([]);
 
   const handleSearchedQuery = useCallback(
-    //Preguntar a la March!
     (e: React.ChangeEvent<HTMLInputElement>) => {
       const value = e.target.value;
       setSearchQuery(value);

@@ -1,4 +1,4 @@
-export type CityTabData = {
+export type TCityTabData = {
   id: string;
   name: string;
   countryName: string;

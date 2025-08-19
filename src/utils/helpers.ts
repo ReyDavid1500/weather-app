@@ -1,7 +1,7 @@
 import type { TApiHourlyData, TDailyForecast } from "../types";
 
 export const getDaysForecast = (data: TApiHourlyData[]) => {
-  const newData = data?.reduce<Record<string, TDailyForecast>>((acc, curr) => {
+  const newData = data.reduce<Record<string, TDailyForecast>>((acc, curr) => {
     const date = new Date(curr.dt * 1000).toISOString().split("T")[0];
     if (!acc[date]) {
       acc[date] = {
@@ -25,5 +25,5 @@ export const getDaysForecast = (data: TApiHourlyData[]) => {
     return acc;
   }, {});
 
-  return Object.values(newData || {});
+  return Object.values(newData);
 };
