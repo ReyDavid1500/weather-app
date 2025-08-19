@@ -1,12 +1,11 @@
-Test project for a small weather application
+Simple Weather App - A modern React TypeScript application featuring multi-city weather forecasts with an intuitive tab-based interface. 
+Built with React 19, TypeScript, and Tailwind CSS, the app integrates OpenWeatherMap API to display 5 day / 3 hour step forecasts for multiple cities. 
+Key features include real-time city search across 20,000+ locations, dynamic tab management, responsive design, and efficient data caching using React Query. 
+The project demonstrates modern React patterns including custom hooks for state management, component composition, error handling, and accessibility best practices.
 
-Overview
-For the test project a small web app/mobile app should be created which utilizes a simple JSON rest
-API.
-The test is aimed to last about 1-2 hours and should NOT exceed 2 hours as it is NOT expected that
-the complete scope will be finished as each developer has his own speed, coding style, approach and
-background knowledge. So it’s up to the developer to manage his own priorities for this test project.
-The app itself should be developed as a React web app.
+Assesment Details:
+
+Test project for a small weather application
 
 Scope
 A small weather application should be created with following basic functionalities:
